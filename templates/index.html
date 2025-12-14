@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spam Detection — Simple UI</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Spam Detection</h1>
+
+    <!-- Single Message -->
+    <div class="mb-3">
+      <label for="textInput" class="form-label">Enter a message :</label>
+      <textarea id="textInput" class="form-control" rows="3"
+        placeholder="Type or paste a message..."></textarea>
+    </div>
+
+    <!-- Batch Messages -->
+    <div class="mb-3">
+      <label for="batchInput" class="form-label">
+        Or enter multiple messages (one per line)
+      </label>
+      <textarea id="batchInput" class="form-control" rows="4"
+        placeholder="Put each message on its own line"></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mb-3">
+      <button id="submitBtn" class="btn btn-primary">
+        Predict
+      </button>
+      <button id="clearBtn" class="btn btn-outline-secondary ms-2">
+        Clear
+      </button>
+    </div>
+
+    <!-- Status -->
+    <div id="status" class="mb-3 fw-semibold"></div>
+
+    <!-- Results -->
+    <div id="results"></div>
+
+  </div>
+
+  <!-- Local JS -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html> 
